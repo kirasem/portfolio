@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Барбершоп «Бритва» — мужские стрижки и бритьё</title>
+<meta name="description" content="Концепт лендинга для барбершопа: услуги, мастера, онлайн-запись.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f0f10;--card:#18181a;--line:#2a2a2d;--ink:#f2efe9;--muted:#9a978f;--gold:#d4a24c}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.logo{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}
+.btn{display:inline-block;background:var(--gold);color:#111;padding:16px 32px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:14px;border:0;cursor:pointer;transition:.2s}
+.btn:hover{background:#e8b862}
+.btn.line{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn.line:hover{border-color:var(--gold);color:var(--gold)}
+header{position:absolute;top:0;left:0;right:0;z-index:10}
+nav{display:flex;align-items:center;justify-content:space-between;height:88px}
+.logo{font-size:28px;display:flex;align-items:center;gap:12px}
+.logo i{width:12px;height:36px;background:repeating-linear-gradient(135deg,#c0392b 0 6px,#fff 6px 12px,#1f4e9c 12px 18px,#fff 18px 24px);border-radius:6px;display:block}
+.links{display:flex;gap:36px;font-size:14px;text-transform:uppercase;letter-spacing:.1em}
+.links a:hover{color:var(--gold)}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 75% 40%,#2b2418 0%,#0f0f10 60%)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-top:88px;padding-bottom:40px}
+.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.3em;font-size:13px;font-weight:700;margin-bottom:22px;display:flex;align-items:center;gap:14px}
+.eyebrow:before{content:"";width:40px;height:1px;background:var(--gold)}
+.hero h1{font-size:76px;margin-bottom:26px}
+.hero h1 span{color:var(--gold)}
+.hero p{color:var(--muted);font-size:18px;max-width:500px;margin-bottom:38px}
+.actions{display:flex;gap:16px;flex-wrap:wrap}
+.emblem{position:relative;aspect-ratio:1;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center}
+.emblem:before{content:"";position:absolute;inset:24px;border:1px dashed #3a3a3e;border-radius:50%}
+.emblem svg{width:58%}
+.emblem .ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.strip div{padding:30px 20px;border-right:1px solid var(--line);text-align:center}
+.strip div:last-child{border-right:0}
+.strip b{font-family:Oswald,sans-serif;font-size:40px;color:var(--gold);display:block}
+.strip small{color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+section{padding:110px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:56px;flex-wrap:wrap}
+.head h2{font-size:58px}
+.head p{color:var(--muted);max-width:420px}
+.services{display:grid;grid-template-columns:1fr 1fr;gap:0 64px}
+.svc{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;border-bottom:1px solid var(--line)}
+.svc h3{font-size:24px;margin-bottom:4px}
+.svc small{color:var(--muted)}
+.svc .pr{font-family:Oswald,sans-serif;font-size:28px;color:var(--gold);white-space:nowrap}
+.masters{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.m{background:var(--card);border:1px solid var(--line)}
+.m .pic{aspect-ratio:4/5;display:grid;place-items:center;position:relative}
+.m:nth-child(1) .pic{background:linear-gradient(160deg,#3a2f20,#141414)}
+.m:nth-child(2) .pic{background:linear-gradient(160deg,#2c2c30,#101012)}
+.m:nth-child(3) .pic{background:linear-gradient(160deg,#3b2a22,#121010)}
+.m .pic svg{width:46%;opacity:.9}
+.m .lvl{position:absolute;top:16px;left:16px;background:var(--gold);color:#111;font-size:12px;font-weight:700;padding:5px 10px;text-transform:uppercase;letter-spacing:.1em}
+.m .body{padding:24px}
+.m h3{font-size:26px}
+.m small{color:var(--muted)}
+.why{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.why-grid .n{font-family:Oswald,sans-serif;color:var(--gold);font-size:18px;margin-bottom:14px;display:block}
+.why-grid h3{font-size:22px;margin-bottom:10px}
+.why-grid p{color:var(--muted);font-size:15px}
+.book .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.book h2{font-size:58px;margin-bottom:20px}
+.book p{color:var(--muted);margin-bottom:28px}
+.contacts{display:grid;gap:16px}
+.contacts div{border-left:2px solid var(--gold);padding-left:16px}
+.contacts small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+form{background:var(--card);border:1px solid var(--line);padding:40px;display:grid;gap:18px}
+form h3{font-size:28px}
+label{display:grid;gap:8px;font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+input,select{font:inherit;font-size:16px;background:#0f0f10;border:1px solid var(--line);color:var(--ink);padding:14px 16px;width:100%;text-transform:none;letter-spacing:0}
+input:focus,select:focus{outline:1px solid var(--gold);border-color:var(--gold)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ok{display:none;color:var(--gold);font-weight:700}
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+@media(max-width:900px){
+ .links{display:none}
+ .hero{min-height:auto}
+ .hero .wrap,.book .wrap{grid-template-columns:1fr}
+ .hero .wrap{padding-top:120px;padding-bottom:70px}
+ .hero h1{font-size:56px}
+ .emblem{max-width:300px;width:100%;margin:10px auto 0}
+ .strip .wrap{grid-template-columns:1fr 1fr}
+ .strip div:nth-child(2){border-right:0}
+ .strip div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+ .services,.masters{grid-template-columns:1fr}
+ .why-grid{grid-template-columns:1fr 1fr}
+ section{padding:72px 0}
+ .head h2,.book h2{font-size:40px}
+}
+@media(max-width:480px){.wrap{padding:0 16px}.hero h1{font-size:46px}.why-grid,.row{grid-template-columns:1fr}.nav-cta{display:none}form{padding:26px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+ <a class="logo" href="#"><i></i>Бритва</a>
+ <div class="links"><a href="#services">Услуги</a><a href="#masters">Мастера</a><a href="#why">О нас</a><a href="#book">Контакты</a></div>
+ <a class="btn nav-cta" href="#book">Записаться</a>
+</nav></div></header>
+
+<section class="hero"><div class="wrap">
+ <div>
+  <div class="eyebrow">Барбершоп с 2019 года</div>
+  <h1>Стрижка, после которой <span>хочется в зеркало</span></h1>
+  <p>Мужские стрижки, оформление бороды и королевское бритьё опасной бритвой. Без очередей, по записи, с чашкой хорошего кофе.</p>
+  <div class="actions"><a class="btn" href="#book">Записаться онлайн</a><a class="btn line" href="#services">Цены</a></div>
+ </div>
+ <div class="emblem">
+  <svg class="ring" viewBox="0 0 300 300"><defs><path id="c" d="M150,150 m-125,0 a125,125 0 1,1 250,0 a125,125 0 1,1 -250,0"/></defs><text font-family="Oswald" font-size="17" letter-spacing="6" fill="#d4a24c"><textPath href="#c">• STYLE • PRECISION • TRADITION • BARBERSHOP • SINCE 2019 </textPath></text></svg>
+  <svg viewBox="0 0 120 120" fill="none" stroke="#f2efe9" stroke-width="3"><circle cx="35" cy="88" r="14"/><circle cx="85" cy="88" r="14"/><path d="M44 77 88 18M76 77 32 18" stroke-linecap="round"/><circle cx="60" cy="56" r="3" fill="#d4a24c" stroke="none"/></svg>
+ </div>
+</div></section>
+
+<div class="strip"><div class="wrap">
+ <div><b>8 000+</b><small>довольных клиентов</small></div>
+ <div><b>6</b><small>мастеров</small></div>
+ <div><b>5.0</b><small>рейтинг на картах</small></div>
+ <div><b>45</b><small>минут на стрижку</small></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+ <div class="head"><h2>Услуги и цены</h2><p>Каждая стрижка включает мытьё головы, укладку и консультацию по уходу.</p></div>
+ <div class="services">
+  <div class="svc"><div><h3>Мужская стрижка</h3><small>машинка и ножницы, укладка</small></div><span class="pr">1 500 ₽</span></div>
+  <div class="svc"><div><h3>Стрижка + борода</h3><small>комплекс со скидкой</small></div><span class="pr">2 300 ₽</span></div>
+  <div class="svc"><div><h3>Оформление бороды</h3><small>форма, контур, уход</small></div><span class="pr">1 000 ₽</span></div>
+  <div class="svc"><div><h3>Королевское бритьё</h3><small>опасная бритва, горячее полотенце</small></div><span class="pr">1 400 ₽</span></div>
+  <div class="svc"><div><h3>Детская стрижка</h3><small>до 12 лет</small></div><span class="pr">1 100 ₽</span></div>
+  <div class="svc"><div><h3>Камуфляж седины</h3><small>голова или борода</small></div><span class="pr">1 200 ₽</span></div>
+ </div>
+</div></section>
+
+<section id="masters" style="padding-top:0"><div class="wrap">
+ <div class="head"><h2>Наши мастера</h2><p>Выбирайте мастера при записи. У каждого свой стиль и сотни постоянных клиентов.</p></div>
+ <div class="masters">
+  <div class="m"><div class="pic"><span class="lvl">Топ-барбер</span><svg viewBox="0 0 100 100" fill="#d4a24c"><circle cx="50" cy="34" r="18"/><path d="M18 92c2-20 16-32 32-32s30 12 32 32z"/></svg></div><div class="body"><h3>Артём</h3><small>Стаж 9 лет · фейды и классика</small></div></div>
+  <div class="m"><div class="pic"><span class="lvl">Барбер</span><svg viewBox="0 0 100 100" fill="#f2efe9"><circle cx="50" cy="34" r="18"/><path d="M18 92c2-20 16-32 32-32s30 12 32 32z"/></svg></div><div class="body"><h3>Илья</h3><small>Стаж 5 лет · бороды и бритьё</small></div></div>
+  <div class="m"><div class="pic"><span class="lvl">Арт-директор</span><svg viewBox="0 0 100 100" fill="#d4a24c"><circle cx="50" cy="34" r="18"/><path d="M18 92c2-20 16-32 32-32s30 12 32 32z"/></svg></div><div class="body"><h3>Максим</h3><small>Стаж 12 лет · сложные стрижки</small></div></div>
+ </div>
+</div></section>
+
+<section class="why" id="why"><div class="wrap">
+ <div class="head"><h2>Почему мы</h2></div>
+ <div class="why-grid">
+  <div><span class="n">01</span><h3>Без очередей</h3><p>Работаем только по записи: вы приходите к своему времени.</p></div>
+  <div><span class="n">02</span><h3>Стерильность</h3><p>Инструменты проходят обработку и стерилизацию после каждого клиента.</p></div>
+  <div><span class="n">03</span><h3>Атмосфера</h3><p>Кофе, PlayStation и музыка, пока ждёте друга.</p></div>
+  <div><span class="n">04</span><h3>Гарантия</h3><p>Не понравилась стрижка? Исправим бесплатно в течение 7 дней.</p></div>
+ </div>
+</div></section>
+
+<section class="book" id="book"><div class="wrap">
+ <div>
+  <h2>Запишитесь онлайн</h2>
+  <p>Выберите услугу и удобное время. Администратор подтвердит запись в течение 15 минут.</p>
+  <div class="contacts">
+   <div><small>Адрес</small>пр. Мира, 48, цокольный этаж</div>
+   <div><small>Часы работы</small>Ежедневно 10:00–22:00</div>
+   <div><small>Телефон</small>+7 (900) 000‑00‑00</div>
+  </div>
+ </div>
+ <form>
+  <h3>Онлайн-запись</h3>
+  <label>Имя<input required placeholder="Ваше имя"></label>
+  <label>Телефон<input type="tel" required placeholder="+7 (___) ___-__-__"></label>
+  <div class="row">
+   <label>Услуга<select><option>Мужская стрижка</option><option>Стрижка + борода</option><option>Оформление бороды</option><option>Королевское бритьё</option></select></label>
+   <label>Мастер<select><option>Любой</option><option>Артём</option><option>Илья</option><option>Максим</option></select></label>
+  </div>
+  <button class="btn" type="submit">Записаться</button>
+  <div class="ok">Готово! Мы свяжемся с вами для подтверждения.</div>
+ </form>
+</div></section>
+
+<footer><div class="wrap"><div>© Барбершоп «Бритва»</div><div>Концепт-проект для портфолио. Компания вымышленная.</div></div></footer>
+<script>
+document.querySelectorAll('form').forEach(f=>f.onsubmit=e=>{e.preventDefault();f.querySelector('.ok').style.display='block';f.reset();});
+</script>
+</body>
+</html>
