@@ -93,9 +93,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @media (max-width:720px){.services{grid-template-columns:1fr}}
 
 /* works */
-.works{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.works .work:last-child:nth-child(3n+2){grid-column:span 2}
-.works .work:last-child:nth-child(3n+2) .shot{aspect-ratio:32/10}
+.works{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+.works .work{grid-column:span 2}
+.works .work.wide{grid-column:span 3}
+.work .badge{font-family:var(--mono);font-size:.72rem;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:-6px}
 .work .botshot{display:flex;flex-direction:column;justify-content:center;gap:8px;padding:16px;background:linear-gradient(160deg,var(--bubble),var(--surface))}
 .botshot .m{font-size:.8rem;max-width:90%}
 .work{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit}
@@ -104,8 +105,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .work:hover img{transform:scale(1.03)}
 .work p{margin:0;color:var(--muted);font-size:.92rem}
 .work.empty .shot{display:grid;place-items:center;border-style:dashed;color:var(--muted);font-family:var(--mono);font-size:.85rem;text-align:center;padding:16px}
-@media (max-width:1060px){.works{grid-template-columns:1fr 1fr}.works .work:last-child:nth-child(3n+2){grid-column:auto}.works .work:last-child:nth-child(3n+2) .shot{aspect-ratio:16/10}.works .work:last-child:nth-child(odd){grid-column:1/-1}.works .work:last-child:nth-child(odd) .shot{aspect-ratio:32/10}}
-@media (max-width:560px){.works{grid-template-columns:1fr}}
+@media (max-width:1060px){.works{grid-template-columns:1fr 1fr}.works .work,.works .work.wide{grid-column:auto}.works .work:last-child:nth-child(odd){grid-column:1/-1}.works .work:last-child:nth-child(odd) .shot{aspect-ratio:32/10}}
+@media (max-width:560px){.works{grid-template-columns:1fr}.works .work:last-child:nth-child(odd) .shot{aspect-ratio:16/10}}
 
 /* process */
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s;list-style:none;padding:0;margin:0}
@@ -224,9 +225,19 @@ footer{padding-block:28px;color:var(--muted);font-size:.85rem;display:flex;justi
       <div class="sec-head">
         <span class="label">Работы</span>
         <h2>Примеры</h2>
-        <p>Сайты здесь концепт-проекты для вымышленных компаний, бот работает по-настоящему. Всё можно открыть и посмотреть.</p>
+        <p>Сверху реальные проекты, ниже концепт-сайты для вымышленных компаний. Всё можно открыть и посмотреть.</p>
       </div>
       <div class="works">
+        <a class="work wide" href="https://wolrus-schelkovo.ru" target="_blank" rel="noopener">
+          <div class="shot"><img src="works/church.jpg" alt="Сайт церкви «Слово жизни» в Щёлкове" loading="lazy"></div>
+          <span class="badge">Реальный проект</span>
+          <h3>Церковь «Слово жизни», Щёлково</h3><p>Сайт церкви: расписание, проповеди, домашние группы, пожертвования</p>
+        </a>
+        <a class="work wide" href="https://t.me/Crusheasy_bot" target="_blank" rel="noopener">
+          <div class="shot botshot"><div class="m me">Рассчитать стоимость</div><div class="m bot">Опишите объект, и я посчитаю стоимость демонтажа.</div></div>
+          <span class="badge">Реальный проект</span>
+          <h3>Бот «ДемонтажPRO»</h3><p>Принимает заявки и считает стоимость демонтажа</p>
+        </a>
         <a class="work" href="coffee/index.html" target="_blank" rel="noopener">
           <div class="shot"><iframe src="coffee/index.html" title="Лендинг кофейни «Зерно»" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div>
           <h3>Кофейня «Зерно»</h3><p>Лендинг с меню и картой, адаптив</p>
@@ -239,17 +250,13 @@ footer{padding-block:28px;color:var(--muted);font-size:.85rem;display:flex;justi
           <div class="shot"><iframe src="school/index.html" title="Лендинг онлайн-школы «Старт»" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div>
           <h3>Онлайн-школа «Старт»</h3><p>Курсы английского, тарифы, заявка</p>
         </a>
-        <a class="work" href="cars/index.html" target="_blank" rel="noopener">
+        <a class="work wide" href="cars/index.html" target="_blank" rel="noopener">
           <div class="shot"><iframe src="cars/index.html" title="Лендинг автосалона «Пробег Плюс»" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div>
           <h3>Автосалон «Пробег Плюс»</h3><p>Каталог авто, кредитный калькулятор, трейд-ин</p>
         </a>
-        <a class="work" href="beauty/index.html" target="_blank" rel="noopener">
+        <a class="work wide" href="beauty/index.html" target="_blank" rel="noopener">
           <div class="shot"><iframe src="beauty/index.html" title="Лендинг салона красоты «Лаванда»" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div>
           <h3>Салон красоты «Лаванда»</h3><p>Услуги, мастера, примеры работ, онлайн-запись</p>
-        </a>
-        <a class="work" href="https://t.me/Crusheasy_bot" target="_blank" rel="noopener">
-          <div class="shot botshot"><div class="m me">Рассчитать стоимость</div><div class="m bot">Опишите объект, и я посчитаю стоимость демонтажа.</div></div>
-          <h3>Бот «ДемонтажPRO»</h3><p>Принимает заявки и считает стоимость демонтажа</p>
         </a>
       </div>
     </div>
