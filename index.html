@@ -93,7 +93,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @media (max-width:720px){.services{grid-template-columns:1fr}}
 
 /* works */
-.works{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.works{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.works .work:last-child:nth-child(3n+2){grid-column:span 2}
 .work .botshot{display:flex;flex-direction:column;justify-content:center;gap:8px;padding:16px;background:linear-gradient(160deg,var(--bubble),var(--surface))}
 .botshot .m{font-size:.8rem;max-width:90%}
 .work{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit}
@@ -102,7 +103,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .work:hover img{transform:scale(1.03)}
 .work p{margin:0;color:var(--muted);font-size:.92rem}
 .work.empty .shot{display:grid;place-items:center;border-style:dashed;color:var(--muted);font-family:var(--mono);font-size:.85rem;text-align:center;padding:16px}
-@media (max-width:1060px){.works{grid-template-columns:1fr 1fr}}
+@media (max-width:1060px){.works{grid-template-columns:1fr 1fr}.works .work:last-child:nth-child(3n+2){grid-column:auto}.works .work:last-child:nth-child(odd){grid-column:1/-1}}
 @media (max-width:560px){.works{grid-template-columns:1fr}}
 
 /* process */
@@ -236,6 +237,10 @@ footer{padding-block:28px;color:var(--muted);font-size:.85rem;display:flex;justi
         <a class="work" href="school/index.html" target="_blank" rel="noopener">
           <div class="shot"><iframe src="school/index.html" title="Лендинг онлайн-школы «Старт»" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div>
           <h3>Онлайн-школа «Старт»</h3><p>Курсы английского, тарифы, заявка</p>
+        </a>
+        <a class="work" href="cars/index.html" target="_blank" rel="noopener">
+          <div class="shot"><iframe src="cars/index.html" title="Лендинг автосалона «Пробег Плюс»" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe></div>
+          <h3>Автосалон «Пробег Плюс»</h3><p>Каталог авто, кредитный калькулятор, трейд-ин</p>
         </a>
         <a class="work" href="https://t.me/Crusheasy_bot" target="_blank" rel="noopener">
           <div class="shot botshot"><div class="m me">Рассчитать стоимость</div><div class="m bot">Опишите объект, и я посчитаю стоимость демонтажа.</div></div>
