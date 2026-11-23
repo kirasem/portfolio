@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кофейня «Зерно» — свежая обжарка и выпечка</title>
+<meta name="description" content="Концепт лендинга для кофейни: меню, атмосфера, бронь столика.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f1e8;--card:#fffaf3;--ink:#2b1d14;--muted:#7a6656;--accent:#b5652b;--accent2:#e9c9a1;--dark:#2b1d14}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.15}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:14px 28px;border-radius:999px;font-weight:700;border:0;cursor:pointer;font-size:16px;transition:.2s}
+.btn:hover{background:#9a531f;transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+header{position:sticky;top:0;z-index:10;background:rgba(247,241,232,.9);backdrop-filter:blur(8px);border-bottom:1px solid #eadfce}
+nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:"Playfair Display",serif;font-size:26px;font-weight:700;display:flex;align-items:center;gap:10px}
+.logo span{width:34px;height:34px;border-radius:50%;background:var(--accent);display:grid;place-items:center;color:#fff;font-size:18px}
+.links{display:flex;gap:32px;font-weight:500}
+.links a:hover{color:var(--accent)}
+.nav-cta{padding:10px 20px;font-size:15px}
+.hero{padding:72px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.tag{display:inline-block;background:var(--accent2);color:var(--ink);padding:6px 14px;border-radius:999px;font-size:14px;font-weight:700;margin-bottom:20px}
+.hero h1{font-size:64px;margin-bottom:20px}
+.hero h1 em{color:var(--accent);font-style:italic}
+.hero p{font-size:19px;color:var(--muted);max-width:520px;margin-bottom:32px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+.stats{display:flex;gap:40px;margin-top:48px}
+.stats b{font-family:"Playfair Display",serif;font-size:34px;display:block}
+.stats small{color:var(--muted)}
+.art{position:relative;aspect-ratio:1;border-radius:50% 50% 32px 32px;background:radial-gradient(circle at 30% 20%,#d9935a,#8a4519 70%);display:grid;place-items:center;box-shadow:0 30px 60px -20px rgba(91,46,16,.5)}
+.art svg{width:72%}
+.badge{position:absolute;background:var(--card);border-radius:18px;padding:14px 18px;box-shadow:0 12px 30px rgba(0,0,0,.15);font-size:14px;font-weight:700}
+.badge.b1{left:-18px;bottom:60px}.badge.b2{right:-10px;top:50px}
+.badge small{display:block;color:var(--muted);font-weight:500}
+section{padding:96px 0}
+.sec-head{text-align:center;max-width:620px;margin:0 auto 56px}
+.sec-head h2{font-size:46px;margin-bottom:14px}
+.sec-head p{color:var(--muted);font-size:18px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feature{background:var(--card);border-radius:24px;padding:36px;border:1px solid #efe3d2}
+.feature .ic{width:56px;height:56px;border-radius:16px;background:var(--accent2);display:grid;place-items:center;font-size:26px;margin-bottom:20px}
+.feature h3{font-size:24px;margin-bottom:10px}
+.feature p{color:var(--muted)}
+.menu{background:var(--dark);color:#f7f1e8}
+.menu .sec-head p{color:#c9b6a3}
+.tabs{display:flex;justify-content:center;gap:10px;margin-bottom:40px;flex-wrap:wrap}
+.tabs button{background:transparent;border:1px solid #5a4636;color:#f7f1e8;padding:10px 22px;border-radius:999px;font:inherit;cursor:pointer}
+.tabs button.on{background:var(--accent);border-color:var(--accent)}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 56px;max-width:900px;margin:0 auto}
+.item{display:flex;align-items:baseline;gap:12px;padding:14px 0;border-bottom:1px dashed #5a4636}
+.item b{font-size:18px}
+.item small{display:block;color:#c9b6a3;font-size:14px}
+.item .dots{flex:1}
+.item .pr{font-family:"Playfair Display",serif;font-size:22px;color:var(--accent2);white-space:nowrap}
+.panel{display:none}.panel.on{display:grid}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:220px 220px;gap:16px}
+.ph{border-radius:24px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:20px;color:#fff;font-weight:700}
+.ph:nth-child(1){grid-row:span 2;background:linear-gradient(160deg,#c98a55,#5b2e10)}
+.ph:nth-child(2){background:linear-gradient(160deg,#e9c9a1,#b5652b)}
+.ph:nth-child(3){background:linear-gradient(160deg,#7a5236,#2b1d14)}
+.ph:nth-child(4){grid-column:span 2;background:linear-gradient(160deg,#d8b48d,#8a4519)}
+.ph svg{position:absolute;right:16px;top:16px;width:90px;opacity:.35}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.review{background:var(--card);border-radius:24px;padding:32px;border:1px solid #efe3d2}
+.stars{color:var(--accent);letter-spacing:3px;margin-bottom:14px}
+.review p{margin-bottom:20px}
+.who{display:flex;align-items:center;gap:12px}
+.av{width:44px;height:44px;border-radius:50%;background:var(--accent2);display:grid;place-items:center;font-weight:700}
+.who small{display:block;color:var(--muted)}
+.book{background:var(--accent2)}
+.book .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.book h2{font-size:46px;margin-bottom:16px}
+.info{margin-top:28px;display:grid;gap:14px}
+.info div{display:flex;gap:14px;align-items:center;font-weight:500}
+.info span{width:44px;height:44px;border-radius:12px;background:var(--card);display:grid;place-items:center}
+form{background:var(--card);padding:36px;border-radius:28px;box-shadow:0 20px 50px -20px rgba(91,46,16,.35);display:grid;gap:16px}
+form h3{font-size:26px}
+label{font-size:14px;font-weight:700;display:grid;gap:6px}
+input,select{font:inherit;padding:14px 16px;border-radius:14px;border:1px solid #e3d4c0;background:#fff;width:100%}
+input:focus,select:focus{outline:2px solid var(--accent);border-color:transparent}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ok{display:none;background:#e7f3e3;color:#2f6b25;padding:14px;border-radius:14px;font-weight:700}
+footer{background:var(--dark);color:#c9b6a3;padding:40px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.concept{opacity:.7}
+@media(max-width:900px){
+ .links{display:none}
+ .hero{padding:40px 0 64px}
+ .hero .wrap,.book .wrap{grid-template-columns:1fr}
+ .hero h1{font-size:42px}
+ .art{max-width:360px;margin:0 auto;width:100%}
+ .features,.reviews{grid-template-columns:1fr}
+ .menu-grid{grid-template-columns:1fr}
+ .gallery{grid-template-columns:1fr 1fr;grid-template-rows:180px 140px 140px}
+ .ph:nth-child(1){grid-column:span 2;grid-row:auto}
+ section{padding:64px 0}
+ .sec-head h2,.book h2{font-size:34px}
+ .stats{gap:24px}
+ .badge.b1{left:0}.badge.b2{right:0}
+}
+@media(max-width:480px){.row{grid-template-columns:1fr}.nav-cta{display:none}.wrap{padding:0 16px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+ <a class="logo" href="#"><span>☕</span>Зерно</a>
+ <div class="links"><a href="#about">О нас</a><a href="#menu">Меню</a><a href="#gallery">Атмосфера</a><a href="#book">Контакты</a></div>
+ <a class="btn nav-cta" href="#book">Забронировать</a>
+</nav></div></header>
+
+<section class="hero"><div class="wrap">
+ <div>
+  <div class="tag">Обжариваем зерно сами каждую неделю</div>
+  <h1>Кофе, ради которого <em>стоит проснуться</em></h1>
+  <p>Уютная кофейня в центре города: specialty-кофе, домашняя выпечка из собственной пекарни и завтраки весь день.</p>
+  <div class="actions"><a class="btn" href="#book">Забронировать столик</a><a class="btn ghost" href="#menu">Смотреть меню</a></div>
+  <div class="stats"><div><b>12</b><small>сортов зерна</small></div><div><b>4.9</b><small>рейтинг на картах</small></div><div><b>7:30</b><small>открываемся</small></div></div>
+ </div>
+ <div class="art">
+  <svg viewBox="0 0 200 200" fill="none"><ellipse cx="100" cy="160" rx="70" ry="12" fill="#3d1f0b" opacity=".35"/><path d="M45 80h100l-10 70a20 20 0 0 1-20 17H75a20 20 0 0 1-20-17z" fill="#fffaf3"/><path d="M145 92h10a18 18 0 0 1 0 36h-14" stroke="#fffaf3" stroke-width="10" fill="none"/><ellipse cx="95" cy="82" rx="50" ry="10" fill="#6b3512"/><path d="M80 82c8-4 22-4 30 0-8 5-22 5-30 0z" fill="#e9c9a1"/><path d="M80 55c-8-10 8-16 0-28M100 55c-8-10 8-16 0-28M120 55c-8-10 8-16 0-28" stroke="#fffaf3" stroke-width="5" stroke-linecap="round" opacity=".7"/></svg>
+  <div class="badge b1">🥐 Круассаны<small>из печи каждое утро</small></div>
+  <div class="badge b2">⭐ 4.9<small>1 200+ отзывов</small></div>
+ </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+ <div class="sec-head"><h2>Почему к нам возвращаются</h2><p>Мы делаем кофейню, в которой хочется задержаться: с хорошим кофе, вкусной едой и тёплой атмосферой.</p></div>
+ <div class="features">
+  <div class="feature"><div class="ic">🌱</div><h3>Своя обжарка</h3><p>Покупаем зелёное зерно у фермеров Эфиопии, Колумбии и Бразилии и обжариваем небольшими партиями.</p></div>
+  <div class="feature"><div class="ic">🥐</div><h3>Своя пекарня</h3><p>Круассаны, синнабоны и чизкейки готовим на месте без полуфабрикатов, с натуральным маслом.</p></div>
+  <div class="feature"><div class="ic">💻</div><h3>Место для работы</h3><p>Быстрый Wi‑Fi, розетки у каждого стола и тихий зал на втором этаже для встреч и учёбы.</p></div>
+ </div>
+</div></section>
+
+<section class="menu" id="menu"><div class="wrap">
+ <div class="sec-head"><h2>Меню</h2><p>Небольшое, но продуманное до последней ложки сиропа.</p></div>
+ <div class="tabs"><button class="on" data-t="c">Кофе</button><button data-t="b">Выпечка</button><button data-t="f">Завтраки</button></div>
+ <div class="menu-grid panel on" id="c">
+  <div class="item"><div><b>Эспрессо</b><small>30 мл, зерно недели</small></div><span class="dots"></span><span class="pr">150 ₽</span></div>
+  <div class="item"><div><b>Капучино</b><small>250 / 350 мл</small></div><span class="dots"></span><span class="pr">220 ₽</span></div>
+  <div class="item"><div><b>Флэт уайт</b><small>двойной ристретто</small></div><span class="dots"></span><span class="pr">240 ₽</span></div>
+  <div class="item"><div><b>Раф «Лаванда»</b><small>сливки, лавандовый сироп</small></div><span class="dots"></span><span class="pr">290 ₽</span></div>
+  <div class="item"><div><b>Воронка V60</b><small>фильтр, на выбор зерна</small></div><span class="dots"></span><span class="pr">260 ₽</span></div>
+  <div class="item"><div><b>Колд брю</b><small>холодное заваривание 18 ч</small></div><span class="dots"></span><span class="pr">270 ₽</span></div>
+ </div>
+ <div class="menu-grid panel" id="b">
+  <div class="item"><div><b>Круассан классический</b><small>французское масло</small></div><span class="dots"></span><span class="pr">160 ₽</span></div>
+  <div class="item"><div><b>Синнабон</b><small>с крем-чизом</small></div><span class="dots"></span><span class="pr">210 ₽</span></div>
+  <div class="item"><div><b>Чизкейк Сан‑Себастьян</b><small>кусочек</small></div><span class="dots"></span><span class="pr">320 ₽</span></div>
+  <div class="item"><div><b>Морковный торт</b><small>с грецким орехом</small></div><span class="dots"></span><span class="pr">290 ₽</span></div>
+ </div>
+ <div class="menu-grid panel" id="f">
+  <div class="item"><div><b>Сырники</b><small>со сметаной и ягодным соусом</small></div><span class="dots"></span><span class="pr">380 ₽</span></div>
+  <div class="item"><div><b>Скрэмбл с лососем</b><small>на тосте из бриоши</small></div><span class="dots"></span><span class="pr">490 ₽</span></div>
+  <div class="item"><div><b>Гранола</b><small>йогурт, мёд, сезонные ягоды</small></div><span class="dots"></span><span class="pr">340 ₽</span></div>
+  <div class="item"><div><b>Шакшука</b><small>с хлебом из печи</small></div><span class="dots"></span><span class="pr">420 ₽</span></div>
+ </div>
+</div></section>
+
+<section id="gallery"><div class="wrap">
+ <div class="sec-head"><h2>Атмосфера</h2><p>Дерево, тёплый свет и запах свежей выпечки с самого утра.</p></div>
+ <div class="gallery">
+  <div class="ph">Зал на 40 гостей<svg viewBox="0 0 24 24" fill="#fff"><path d="M4 18h16v2H4zM6 4h12l-1 10H7z"/></svg></div>
+  <div class="ph">Бар и обжарка</div>
+  <div class="ph">Летняя веранда</div>
+  <div class="ph">Пекарня с открытой кухней</div>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <div class="sec-head"><h2>Отзывы гостей</h2></div>
+ <div class="reviews">
+  <div class="review"><div class="stars">★★★★★</div><p>Лучший флэт уайт в городе. Хожу сюда каждое утро перед работой, бариста уже знают мой заказ.</p><div class="who"><div class="av">А</div><div><b>Анна</b><small>постоянный гость</small></div></div></div>
+  <div class="review"><div class="stars">★★★★★</div><p>Круассаны как в Париже, без преувеличения. И очень уютный второй этаж, чтобы поработать.</p><div class="who"><div class="av">Д</div><div><b>Дмитрий</b><small>фрилансер</small></div></div></div>
+  <div class="review"><div class="stars">★★★★★</div><p>Отмечали здесь день рождения подруги, нам подготовили столик и торт. Спасибо за заботу!</p><div class="who"><div class="av">М</div><div><b>Мария</b><small>гость</small></div></div></div>
+ </div>
+</div></section>
+
+<section class="book" id="book"><div class="wrap">
+ <div>
+  <h2>Забронируйте столик</h2>
+  <p>Оставьте заявку, и мы перезвоним в течение 10 минут, чтобы подтвердить бронь.</p>
+  <div class="info">
+   <div><span>📍</span>ул. Садовая, 12, вход со двора</div>
+   <div><span>🕗</span>Ежедневно с 7:30 до 22:00</div>
+   <div><span>📞</span>+7 (900) 000‑00‑00</div>
+  </div>
+ </div>
+ <form id="f1">
+  <h3>Бронь столика</h3>
+  <label>Имя<input required placeholder="Как к вам обращаться"></label>
+  <label>Телефон<input required type="tel" placeholder="+7 (___) ___-__-__"></label>
+  <div class="row"><label>Дата<input type="date" required></label><label>Гостей<select><option>1–2</option><option>3–4</option><option>5+</option></select></label></div>
+  <button class="btn" type="submit">Отправить заявку</button>
+  <div class="ok">Спасибо! Мы скоро перезвоним.</div>
+ </form>
+</div></section>
+
+<footer><div class="wrap"><div>© Кофейня «Зерно»</div><div class="concept">Концепт-проект для портфолио. Компания вымышленная.</div></div></footer>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('.tabs button,.panel').forEach(e=>e.classList.remove('on'));
+ b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on');
+});
+document.querySelectorAll('form').forEach(f=>f.onsubmit=e=>{e.preventDefault();f.querySelector('.ok').style.display='block';f.reset();});
+</script>
+</body>
+</html>
