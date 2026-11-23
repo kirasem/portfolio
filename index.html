@@ -89,6 +89,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .svc .price{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-variant-numeric:tabular-nums}
 .svc .price b{font-family:var(--display);font-size:1.25rem}
 .svc .price span{color:var(--muted);font-size:.9rem}
+.services .svc:last-child:nth-child(odd){grid-column:1/-1}
 @media (max-width:720px){.services{grid-template-columns:1fr}}
 
 /* works */
@@ -201,6 +202,12 @@ footer{padding-block:28px;color:var(--muted);font-size:.85rem;display:flex;justi
           <div class="price"><b>от 3 000 ₽</b><span>от 3 дней</span></div>
         </article>
         <article class="svc">
+          <span class="tag">/wordpress</span>
+          <h3>Лендинг на WordPress</h3>
+          <ul><li>Тексты и фото меняете сами через админку</li><li>Форма заявки и базовое SEO</li><li>Подключаю домен и хостинг</li></ul>
+          <div class="price"><b>от 6 000 ₽</b><span>от 5 дней</span></div>
+        </article>
+        <article class="svc">
           <span class="tag">/site+bot</span>
           <h3>Сайт и бот в связке</h3>
           <ul><li>Многостраничный сайт до 5 страниц</li><li>Бот принимает заявки с сайта</li><li>Размещение на хостинге и домене</li></ul>
@@ -215,7 +222,7 @@ footer{padding-block:28px;color:var(--muted);font-size:.85rem;display:flex;justi
       <div class="sec-head">
         <span class="label">Работы</span>
         <h2>Примеры</h2>
-        <p>Концепт-проекты: компании вымышленные, сайты рабочие, их можно открыть и посмотреть.</p>
+        <p>Сайты здесь концепт-проекты для вымышленных компаний, бот работает по-настоящему. Всё можно открыть и посмотреть.</p>
       </div>
       <div class="works">
         <a class="work" href="coffee/index.html" target="_blank" rel="noopener">
@@ -231,8 +238,8 @@ footer{padding-block:28px;color:var(--muted);font-size:.85rem;display:flex;justi
           <h3>Онлайн-школа «Старт»</h3><p>Курсы английского, тарифы, заявка</p>
         </a>
         <a class="work" href="https://t.me/Crusheasy_bot" target="_blank" rel="noopener">
-          <div class="shot botshot"><div class="m me">/start</div><div class="m bot">Здравствуйте! Это ДемонтажPRO.</div></div>
-          <h3>Бот «ДемонтажPRO»</h3><p>Telegram-бот · @Crusheasy_bot</p>
+          <div class="shot botshot"><div class="m me">Рассчитать стоимость</div><div class="m bot">Опишите объект, и я посчитаю стоимость демонтажа.</div></div>
+          <h3>Бот «ДемонтажPRO»</h3><p>Принимает заявки и считает стоимость демонтажа</p>
         </a>
       </div>
     </div>
